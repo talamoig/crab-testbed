@@ -18,7 +18,7 @@ The typical workflow is:
   * `[lxplus]$ ./crabserver-create.sh my-crab-server 'SLC6 CERN Server - x86_64 [2015-02-10]'`
   * wait until you can ssh to the VM
   * `[lxplus]$ ssh my-crab-server`
-  * `[my-crab-server] cd path/to/crab-testbed`
-  * `[my-crab-server] ./crabserver-install-part1.sh`
-  * `[my-crab-server] sudo reboot`
-  * `[my-crab-server] ./crabserver-install-part2.sh`
+  * `[my-crab-server]$ cd path/to/crab-testbed`
+  * `[my-crab-server]$ ./crabserver-install-part1.sh`
+  * `[my-crab-server]$ sudo reboot`
+  * `[my-crab-server]$ ./crabserver-install-part2.sh`
