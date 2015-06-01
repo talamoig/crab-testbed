@@ -20,11 +20,10 @@ The typical workflow is:
   * `[my-crab-server]$ cd path/to/crab-testbed`
   * `[my-crab-server]$ ./crabserver-install-part1.sh`
   * `[my-crab-server]$ sudo reboot`
-  * `[my-crab-server]$ ./crabserver-install-part2.sh`
   * configure the `paramsrc` (read below)
-  * `[my-crab-server]$ ./crabserver-install-part3.sh`
+  * `[my-crab-server]$ ./crabserver-install-part2.sh`
 
-During step 3 the configuration file `paramsrc` is used where shell-variable have to be defined. The paramaters are:
+During `crabserver-install-part2.sh` the configuration file `paramsrc` is used where shell-variable have to be defined. The paramaters are:
 
   * `GISTEXTURL` (eg. `https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt`)
   * `ORACLEUSER`: your oracle user
