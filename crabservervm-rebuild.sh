@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
-then
-echo "Usage: $0 <vm-name>"
-exit 1
-fi
-
-VMNAME=$1
+source crabservervm-common
 
 source ~/.openrc 2> /dev/null
 if [[ $? != 0 ]]; then echo "~/.openrc not present. create it with openstack-init.sh"; exit 1; fi

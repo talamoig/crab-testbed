@@ -1,0 +1,11 @@
+
+if [ $# -ne 2 ]
+then
+echo "Usage: $0 <vm-name> <image>"
+echo "Please use one of the following images:"
+openstack image list -f csv -c Name|grep "SLC6 CERN Server - x86_64"
+exit 1
+fi
+
+VMNAME=$1
+IMAGE=$2

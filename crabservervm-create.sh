@@ -1,16 +1,7 @@
 #!/bin/bash
 # from http://clouddocs.web.cern.ch/clouddocs/tutorial/create_your_openstack_profile.html
 
-if [ $# -ne 2 ]
-then
-echo "Usage: $0 <vm-name> <image>"
-echo "Please use one of the following images:"
-openstack image list -f csv -c Name|grep "SLC6 CERN Server - x86_64"
-exit 1
-fi
-
-VMNAME=$1
-IMAGE=$2
+source crabservervm-common
 
 nslookup $VMNAME > /dev/null 
 if [[ $? == 0 ]]; then echo "$VMNAME already present in the DNS. Exiting..."; exit 1; fi
