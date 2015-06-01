@@ -1,8 +1,7 @@
 # Crab Server Installation Scripts
 
-This repo contains scripts to build a CRAB 3 development testbed.
+This repo contains scripts to build a CRAB 3 development testbed, assuming you're working on CERN lxplus system and interacting with its Openstack facility.
 
-Is assumes you're working on CERN lxplus system and interacting with its Openstack facility.
 The scripts are:
 
   * `openstack-init.sh`: it creates the `~/.openrc` file that will be sourced by all the openstack-related scripts
@@ -22,3 +21,17 @@ The typical workflow is:
   * `[my-crab-server]$ ./crabserver-install-part1.sh`
   * `[my-crab-server]$ sudo reboot`
   * `[my-crab-server]$ ./crabserver-install-part2.sh`
+  * `[my-crab-server]$ ./crabserver-install-part3.sh`
+
+During step 3 the configuration file `paramsrc` is used where shell-variable have to be defined. The paramaters are:
+
+  * `GISTEXTURL` (eg. `https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt`)
+  * `ORACLEUSER`: your oracle user
+  * `ORACLEPASS`: your oracle password
+  * `GITUSER`: your github user account
+  * `INITDB`: if defined the oracle database will be initialized. Necessary only the first time
+
+Consider that you should have:
+
+  * a oracle account;
+  *  `CRABServer` and `WMCore` repositories forked on your account.
