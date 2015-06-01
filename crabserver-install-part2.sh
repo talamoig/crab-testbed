@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RCFILE=paramsrc
+RCFILE=$PWD/paramsrc
 CRABAUTH=/data/srv/current/auth/crabserver/CRABServerAuth.py
 CRABINIT=/data/crabserver.sh
 
@@ -14,7 +14,7 @@ $A/InstallDev -R comp@$HGVER -A slc6_amd64_gcc481 -s image -v $HGVER $REPO -p "a
 
 source $RCFILE
 
-if [ ! "string$GISTEXTURL" != "string" ]
+if [ "string$GISTEXTURL" == "string" ]
 then
     echo "Error. Please specify a GISTEXTURL variable in $RCFILE"
     exit 1
