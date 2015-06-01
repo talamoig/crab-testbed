@@ -1,0 +1,3 @@
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/CMSCrabRESTInterface
+http://clouddocs.web.cern.ch/clouddocs/tutorial/create_your_openstack_profile.html
+https://cms-http-group.web.cern.ch/cms-http-group/tutorials/environ/vm-setup.html
