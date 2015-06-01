@@ -21,6 +21,7 @@ The typical workflow is:
   * `[my-crab-server]$ ./crabserver-install-part1.sh`
   * `[my-crab-server]$ sudo reboot`
   * `[my-crab-server]$ ./crabserver-install-part2.sh`
+  * configure the `paramsrc` (read below)
   * `[my-crab-server]$ ./crabserver-install-part3.sh`
 
 During step 3 the configuration file `paramsrc` is used where shell-variable have to be defined. The paramaters are:
