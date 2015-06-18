@@ -57,6 +57,7 @@ dbconfig = {'dev': {'.title': 'Pre-production',
 EOF
 sudo mv /tmp/CRABServerAuth.py $CRABAUTH
 sudo chmod 440 $CRABAUTH
+sudo chown  _sw:_config $CRABAUTH
 
 if [ ! -f /data/srv/current/auth/crabserver/dmwm-service-cert.pem ]
 then
@@ -110,19 +111,19 @@ if [ "string$INITDB" != 'string' ]
 then
     /data/user/WMCore/bin/wmcore-db-init --config /data/dbconfig.py --create --modules=Databases.TaskDB,Databases.FileMetaDataDB
 fi
-cat > $CRABINIT <<\EOF
-numargs=${#}
-if [ $numargs -eq 0 ]; then
+cat > $CRABINIT <<EOF
+numargs=\${#}
+if [ \$numargs -eq 0 ]; then
   echo "Please specify the action (start, stop or status) to take on local CRAB server."
-elif [ $numargs -eq 1 ]; then
-  action=${1}
-  cwd=$(pwd)
+elif [ \$numargs -eq 1 ]; then
+  action=\${1}
+  cwd=\$(pwd)
   echo "Sourcing environment from /data/srv"
   source $INITFILE
-  echo "Executing cd /data; /data/cfg/admin/InstallDev -d /data/srv -s $action; cd $cwd; stty sane"
-  cd /data; /data/cfg/admin/InstallDev -d /data/srv -s $action; cd $cwd; stty sane
+  echo "Executing cd /data; /data/cfg/admin/InstallDev -d /data/srv -s \$action; cd \$cwd; stty sane"
+  cd /data; /data/cfg/admin/InstallDev -d /data/srv -s \$action; cd \$cwd; stty sane
 else
-  echo "This script takes only 1 argument ($numargs arguments were given)."
+  echo "This script takes only 1 argument (\$numargs arguments were given)."
 fi
 EOF
 
