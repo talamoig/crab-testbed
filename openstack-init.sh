@@ -8,8 +8,11 @@ export OS_USERNAME=`id -un`
 export OS_TENANT_NAME="Personal $OS_USERNAME"
 
 # With Keystone you pass the keystone password.
-echo "Please enter your OpenStack Password: "
-read -s OS_PASSWORD_INPUT
-export OS_PASSWORD=\$OS_PASSWORD_INPUT
+if [ -z \$OS_PASSWORD ]
+then
+  echo "Please enter your OpenStack Password: "
+  read -s OS_PASSWORD_INPUT
+  export OS_PASSWORD=\$OS_PASSWORD_INPUT
+fi
 EOF
 fi
