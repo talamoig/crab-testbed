@@ -16,8 +16,8 @@ The typical workflow of the first time you use this script collection is:
   * `cp paramsrc.sample paramsrc`
   * customize `paramsrc` (read below)
   * `./crabservervm-create.sh my-crab-server 'SLC6 CERN Server - x86_64 [2015-02-10]'`
-  *  wait until you can ssh to the VM
-  * `ssh my-crab-server`
+  *  wait until you can ssh to the VM (you can run `./waitvm-then-ssh.sh my-crab-server`)
+  * `ssh my-crab-server` (not if you logged using the previous script)
   * `cd path/to/crab-testbed`
   * `./crabserver-install-part1.sh`
   * `sudo reboot`
