@@ -25,9 +25,10 @@ fi
 
 source $RCFILE
 
-var_check 'ORACLEUSER' || exit 1
-var_check 'ORACLEPASS' || exit 1
-var_check 'REST_HOSTNAME' || exit 1
+for V in ORACLEUSER ORACLEPASS REST_HOSTNAME
+do
+var_check $V || exit 1
+done
 
 var_check 'GITUSER'
 if [ $? -ne 0 ]
