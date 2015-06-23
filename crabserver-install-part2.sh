@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RCFILE=$PWD/paramsrc
+RCFILE=$PWD/paramsrc-filecheck.sh
 CRABAUTH=/data/srv/current/auth/crabserver/CRABServerAuth.py
 CRABINIT=/data/crabserver.sh
 
@@ -14,26 +14,8 @@ $A/InstallDev -R comp@$HGVER -A slc6_amd64_gcc481 -s image -v $HGVER $REPO -p "a
 
 source $RCFILE
 
-if [ "string$GISTEXTURL" == "string" ]
-then
-    echo "Error. Please specify a GISTEXTURL variable in $RCFILE"
-    exit 1
-fi
 echo "Setting data.extconfigurl to $GISTEXTURL"
 sed -i "s|data.extconfigurl.*|data.extconfigurl = '$GISTEXTURL'|" /data/srv/current/config/crabserver/config.py
-
-
-if [ "string$ORACLEUSER" == "string" ]
-then
-    echo "Error. Please specify a ORACLEUSER variable in $RCFILE"
-    exit 1
-fi
-
-if [ "string$ORACLEPASS" == "string" ]
-then
-    echo "Error. Please specify a ORACLEUSER variable in $RCFILE"
-    exit 1
-fi
 
 echo "Creating CRABServerAuth.py"
 
@@ -67,11 +49,6 @@ then
     sudo cp /tmp/x509up_u$UID /data/srv/current/auth/crabserver/dmwm-service-key.pem
 fi
 
-if [ ! "string$GITUSER" != "string" ]
-then
-    echo "Error. Please specify your GITUSER variable in $RCFILE. The account should have cloned repo of CRABServer and WMCore (from https://github.com/dmwm)"
-    exit 1
-fi
 if [ ! -d /data/user/CRABServer ]
 then
     cd /data/user/
