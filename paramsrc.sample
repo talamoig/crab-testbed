@@ -1,0 +1,8 @@
+GISTEXTURL=https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt
+ORACLEUSER=crab3_username
+ORACLEPASS=password
+GITUSER=userongithub
+# setting INITDB enables DB initialization
+#INITDB=
+TW_HOSTNAME=my-taskworer
+REST_HOSTNAME=my-crabserver
