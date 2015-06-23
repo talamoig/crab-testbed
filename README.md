@@ -19,8 +19,7 @@ The typical workflow of the first time you use this script collection is:
   *  wait until you can ssh to the VM (you can run `./waitvm-then-ssh.sh my-crab-server`)
   * `ssh my-crab-server` (not if you logged using the previous script)
   * `cd path/to/crab-testbed`
-  * `./crabserver-install-part1.sh`
-  * `sudo reboot`
+  * `./crabserver-install-part1.sh # at the end will reboot automatically`
   * `ssh my-crab-server`
   * `./crabserver-install-part2.sh`
 
@@ -30,6 +29,7 @@ During `crabserver-install-part2.sh` the configuration file `paramsrc` is used w
   * `ORACLEPASS`: your oracle password
   * `GITUSER`: your github user account
   * `INITDB`: if defined the oracle database will be initialized. Necessary only the first time
+  * `HGVER`: version of the crab server. It is an optional parameter. If it is not configured, the last one will be used (you can obtain it with `git tag -l 'HG*'|tail -1` in the git repository `git://github.com/dmwm/deployment.git`)
   * `REST_HOSTNAME`: hostname of the RESTful CRAB3 interface, aka Crab Server
   * `TW_HOSTNAME`: hostname of the Task Worker. if not defined REST_HOSTNAME will be used instead
   * `GISTEXTURL`: (eg. `https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt`) If you don't provide it, a suggestion
