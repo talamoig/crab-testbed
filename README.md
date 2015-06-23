@@ -15,7 +15,7 @@ The typical workflow of the first time you use this script collection is:
   * `cd crab-testbed/`
   * `cp paramsrc.sample paramsrc`
   * customize `paramsrc` (read below)
-  * `./crabserver-create.sh my-crab-server 'SLC6 CERN Server - x86_64 [2015-02-10]'`
+  * `./crabservervm-create.sh my-crab-server 'SLC6 CERN Server - x86_64 [2015-02-10]'`
   *  wait until you can ssh to the VM
   * `ssh my-crab-server`
   * `cd path/to/crab-testbed`
