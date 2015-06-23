@@ -1,6 +1,0 @@
-GISTEXTURL=https://gist.githubusercontent.com/username/a46f05a991df431febb2/raw/gistfile1.txt
-ORACLEUSER=crab3_username
-ORACLEPASS=password
-GITUSER=username
-# setting INITDB enables DB initialization
-#INITDB=
