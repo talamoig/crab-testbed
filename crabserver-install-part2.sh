@@ -4,15 +4,19 @@ RCFILE=$PWD/paramsrc-filecheck.sh
 CRABAUTH=/data/srv/current/auth/crabserver/CRABServerAuth.py
 CRABINIT=/data/crabserver.sh
 
+source $RCFILE
+
 git clone git://github.com/dmwm/deployment.git /data/cfg
 cd /data/cfg
+if [ "string" == "string${HGVER}"]
+then
 HGVER=`git tag -l 'HG*'|tail -1`
+fi
+
 git reset --hard $HGVER
 REPO="-r comp=comp.pre" A=/data/cfg/admin
 cd /data
 $A/InstallDev -R comp@$HGVER -A slc6_amd64_gcc481 -s image -v $HGVER $REPO -p "admin/devtools frontend crabserver crabcache"
-
-source $RCFILE
 
 echo "Setting data.extconfigurl to $GISTEXTURL"
 sed -i "s|data.extconfigurl.*|data.extconfigurl = '$GISTEXTURL'|" /data/srv/current/config/crabserver/config.py
