@@ -26,13 +26,14 @@ The typical workflow of the first time you use this script collection is:
 
 During `crabserver-install-part2.sh` the configuration file `paramsrc` is used where shell-variable have to be defined. The paramaters are:
 
-  * `GISTEXTURL` (eg. `https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt`)
   * `ORACLEUSER`: your oracle user
   * `ORACLEPASS`: your oracle password
   * `GITUSER`: your github user account
   * `INITDB`: if defined the oracle database will be initialized. Necessary only the first time
   * `REST_HOSTNAME`: hostname of the RESTful CRAB3 interface, aka Crab Server
   * `TW_HOSTNAME`: hostname of the Task Worker. if not defined REST_HOSTNAME will be used instead
+  * `GISTEXTURL`: (eg. `https://gist.githubusercontent.com/talamoig/a46f05a991df431febb2/raw/gistfile1.txt`) If you don't provide it, a suggestion
+of its content will be printed, according to the other parameters
 
 Consider that you should have:
 
