@@ -21,6 +21,8 @@ done
 
 echo ' ok'
 
+grep $HOST ~/.ssh/known_hosts > /dev/null && echo "Warning: $HOST key already present. If it was just reinstalled first remove the old key from ~/.ssh/known_hosts"
+
 echo -n 'wait on ssh:'
 ssh $HOST "uptime" > /dev/null 2>&1 
 RET=$?
